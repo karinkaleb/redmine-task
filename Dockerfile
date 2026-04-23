@@ -1,0 +1,3 @@
+FROM redmine:6
+
+EXPOSE 3000
