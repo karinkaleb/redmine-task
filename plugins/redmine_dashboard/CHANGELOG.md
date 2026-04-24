@@ -17,6 +17,36 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a Ch
 
 ### Breaks
 
+## 2.16.0 - (2025-01-17)
+
+---
+
+### New
+
+- Support for Redmine 6.0 by @jgraichen
+- Support for Redmine 5.2 by @jgraichen
+
+### Changes
+
+- Replaced deprecated functions in new Redmine versions by @jgraichen
+
+### Breaks
+
+- Require Ruby 3.0+ by @jgraichen
+- Require Redmine 5.0+ by @jgraichen
+
+## 2.15.0 - (2023-10-31)
+
+---
+
+### New
+
+- Support for Redmine 5.1 by @jgraichen
+
+### Fixes
+
+- Workaround a change in Redmine 5.1 to ignore roles with only the `:edit_own_issues` permission by @jgraichen
+
 ## 2.14.0 - (2023-03-26)
 
 ---

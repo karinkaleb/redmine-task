@@ -19,7 +19,7 @@ class RdbDashboard
     # Init board in sub class
     init if respond_to? :init
 
-    filters.each do |_id, filter|
+    filters.each_value do |filter|
       filter.values = options[:filters][filter.id] if options[:filters][filter.id]
     end
   end
@@ -31,12 +31,12 @@ class RdbDashboard
 
   def update(params)
     if params[:reset]
-      filters.each do |_id, filter|
+      filters.each_value do |filter|
         filter.values = filter.default_values
       end
       options[:filters] = {}
     else
-      filters.each do |_id, filter|
+      filters.each_value do |filter|
         filter.update params if params
         options[:filters][filter.id] = filter.values
       end
@@ -103,7 +103,7 @@ class RdbDashboard
     @abbreviations[project_id] ||= begin
       abbreviation = '#'
       Project.find(project_id).custom_field_values.each do |f|
-        if f.to_s.blank? && f.custom_field.read_attribute(:name).downcase == 'abbreviation'
+        if f.to_s.blank? && f.custom_field.read_attribute(:name).casecmp('abbreviation').zero?
           abbreviation = "#{f}-"
         end
       end
@@ -141,18 +141,18 @@ class RdbDashboard
   def editable?(str = nil)
     @editable ||= !User.current.allowed_to?(:edit_issues, project).nil?
     if str
-      @editable ? str : nil
+      @editable ? str : false
     else
       @editable
     end
   end
 
   def filters
-    @filters ||= HashWithIndifferentAccess.new
+    @filters ||= ActiveSupport::HashWithIndifferentAccess.new
   end
 
   def groups
-    @groups ||= HashWithIndifferentAccess.new
+    @groups ||= ActiveSupport::HashWithIndifferentAccess.new
   end
 
   def group_list

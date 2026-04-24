@@ -25,8 +25,10 @@ end
 # Gemfile as a plugin Gemfile. In that case our local development gems are not
 # needed (and actually conflicting), therefore we skip them.
 if @dependencies.none? {|d| d.name == 'rubocop' }
-  group :development, :test do
-    gem 'rubocop', '~> 1.51.0'
-    gem 'slim_lint', '~> 0.24.0'
+  group :development do
+    gem 'rubocop', '~> 1.70.0'
+    gem 'rubocop-performance', '~> 1.23.0'
+    gem 'rubocop-rails', '~> 2.28.0'
+    gem 'slim_lint', '~> 0.31.0'
   end
 end
