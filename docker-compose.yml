@@ -1,8 +1,6 @@
-version: '3.1'
-
 services:
   redmine:
-    image: redmine:6
+    build: .
     restart: always
     ports:
       - 3000:3000
@@ -16,12 +14,3 @@ services:
       - ./themes:/usr/src/redmine/public/themes
       - ./plugins:/usr/src/redmine/plugins
       - ./redmine_files:/usr/src/redmine/files
-    
-  db:
-    image: postgres:12.3
-    environment:
-      - POSTGRES_DB=redmine
-      - POSTGRES_USER=redmine
-      - POSTGRES_PASSWORD=redmine
-    volumes:
-      - ./postgres_data:/var/lib/postgresql/data
