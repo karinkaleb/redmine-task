@@ -11,6 +11,7 @@ services:
       TZ: Asia/Yekaterinburg
     volumes:
       - ./conf.d/database.yml:/usr/src/redmine/config/database.yml
+      - ./conf.d/configuration.yml:/usr/src/redmine/config/configuration.yml
       - ./themes:/usr/src/redmine/public/themes
       - ./plugins:/usr/src/redmine/plugins
       - ./redmine_files:/usr/src/redmine/files

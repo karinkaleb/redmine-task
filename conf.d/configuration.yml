@@ -1,0 +1,11 @@
+production:
+  email_delivery:
+    delivery_method: :smtp
+    smtp_settings:
+      address: "smtp.example.com"
+      port: 587
+      domain: "example.com"
+      authentication: :login
+      user_name: "user@example.com"
+      password: "PASSWORD"
+      enable_starttls_auto: true
