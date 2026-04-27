@@ -1,11 +1,12 @@
+# Gmail
 production:
   email_delivery:
     delivery_method: :smtp
     smtp_settings:
-      address: "smtp.example.com"
+      address: "smtp.gmail.com"
       port: 587
-      domain: "example.com"
+      domain: "gmail.com"
       authentication: :login
-      user_name: "user@example.com"
-      password: "PASSWORD"
+      user_name: "yourname@gmail.com"
+      password: "YOUR_APP_PASSWORD"
       enable_starttls_auto: true

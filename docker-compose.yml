@@ -15,3 +15,4 @@ services:
       - ./themes:/usr/src/redmine/public/themes
       - ./plugins:/usr/src/redmine/plugins
       - ./redmine_files:/usr/src/redmine/files
+ 
