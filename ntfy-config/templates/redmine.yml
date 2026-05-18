@@ -1,0 +1,7 @@
+title: |
+  Redmine: {{ .payload.action }} #{{ .payload.issue.id }}
+message: |
+  {{ .payload.issue.subject }}
+  {{ if .payload.issue.description }}
+  {{ .payload.issue.description }}
+  {{ end }}

@@ -3,4 +3,5 @@ production:
   database: redmine
   host: db
   username: redmine
-  password: "redmine"
+  password: example
+  encoding: unicode

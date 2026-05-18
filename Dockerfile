@@ -1,4 +1,4 @@
-FROM redmine:6
+FROM redmine:5.1.12
 
 USER root
 RUN apt-get update && \
@@ -7,6 +7,7 @@ RUN apt-get update && \
 
 COPY ./plugins /usr/src/redmine/plugins
 COPY ./themes /usr/src/redmine/public/themes
+COPY ./conf.d/configuration.yml /usr/src/redmine/config/configuration.yml
 
 USER redmine
 RUN bundle install --without development test
