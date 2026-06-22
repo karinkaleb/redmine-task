@@ -1,0 +1,19 @@
+#inventory-menu{
+	border-bottom:2px solid #6692CC;
+	margin: 10px -10px 0px -10px;
+}
+
+#inventory-menu ul{
+	padding:0;
+	margin:0;
+	margin-bottom:5px;
+}
+
+#inventory-menu ul li{
+	display: inline;
+	list-style-type: none;
+	padding-right: 20px;
+	border:2px solid #6692CC;
+	border-bottom:none;
+	padding:5px;
+}
